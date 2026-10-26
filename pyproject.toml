@@ -1,0 +1,33 @@
+[project]
+name = "swarmpot"
+version = "0.1.0"
+description = "Pay any x402 API with a single GET"
+readme = "README.md"
+authors = [
+    { name = "Axel Wennström", email = "axel.wennstroem@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard]>=0.146.0",
+    "httpx>=0.28.1",
+    "pydantic-settings>=2.16.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.fastapi]
+entrypoint = "swarmpot.main:app"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "x402[evm,fastapi]>=2.25.0",
+]
+
+[tool.pytest.ini_options]
+markers = [
+    "facilitator: hits the public x402 facilitator over the network",
+    "network: makes real requests to public internet hosts",
+]

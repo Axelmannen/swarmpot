@@ -1,0 +1,139 @@
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f6f7f9;
+  --text: #16181d;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --line: #16181d; /* diagram arrows */
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --yellow: #f5b301;
+  --blue: #2f80ff;
+  --pink: #ec2d7a;
+  --green: #16b364;
+  --violet: #7c4dff;
+  --code-bg: #f6f7f9;
+  --code-text: #16181d;
+  --code-muted: #8a909c;
+  --radius: 12px;
+  --stroke: 1px solid var(--border);
+  --shadow-soft: 0 1px 2px rgb(16 24 40 / 4%), 0 8px 24px rgb(16 24 40 / 6%);
+  --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+a {
+  color: var(--primary);
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  font-variant-ligatures: none;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border: var(--stroke);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.925rem;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--surface-2);
+}
+
+.btn-primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+/* Text in an accent color, darkened enough to read on white. Set --accent per element. */
+.tinted {
+  color: color-mix(in srgb, var(--accent) 80%, black);
+}
+
+.card {
+  background: var(--surface);
+  border: var(--stroke);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.section-head h2 {
+  font-size: clamp(1.7rem, 3.5vw, 2.3rem);
+}
